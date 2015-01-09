@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %} | Extension: {{ name }}{% endblock %}
+
+{% block main %}
+<div class="page-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <h1 class="smaller"><a href="{% url 'geokey_extension:index'">{{name}}</a></h1>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="container">
+    {% include 'snippets/messages.html' %}
+
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h6 class="item-info">Extension</h6>
+                    <h3>{{ name }}</h3>
+                </div>
+                <div class="list-group">
+                    <!-- Nav stuff here -->
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-8">
+            <!-- Content stuff here -->
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block libraries %}
+
+{% endblock %}
