@@ -2,6 +2,6 @@ from extensions.base import register
 register(
     'geokey_extension',
     'GeoKey Extension',
-    display_admin=True,
-    superuser=True
+    display_admin=False,
+    superuser=False
 )
