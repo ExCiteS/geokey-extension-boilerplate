@@ -10,7 +10,14 @@ To start a new extension using the boilerplate, follow the instructions.
 
 Rename all occurences of `geokey_extension` with the name of your Python package (e.g. my_awesome_package) and `GeoKey Extension` with a title of your extension (e.g. My Extension). The latter one will be used in user interface if applicable. Don't forget to rename the directories accordingly.
 
-Install the extension. First, add the package to installed app:
+Install the extension. Move to the root directory of your package and install for development.
+
+```
+cd geokey-extension
+pip install -e .
+```
+
+Add the package to installed app:
 
 ```
 INSTALLED_APPS += (
