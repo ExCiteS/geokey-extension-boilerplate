@@ -20,7 +20,7 @@ Install the extension. Move to the root directory of your package and install fo
     pip install -e .
 
 
-Add the package to installed app:
+Add the package to installed apps:
 
 .. code-block:: console
 
@@ -32,6 +32,7 @@ Add the package to installed app:
 Then, link the URLs into `urls.py`:
 
 .. code-block:: console
+
     urlpatterns = patterns(
         ...
         url(r'^', include('my_awesome_package.urls', namespace='my_awesome_package')),
