@@ -6,7 +6,7 @@ from views import IndexPage
 urlpatterns = patterns(
     '',
     url(
-        r'^$',
+        r'^admin/awesome-extension/$',
         IndexPage.as_view(),
         name='index')
 )
