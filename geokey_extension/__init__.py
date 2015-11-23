@@ -5,7 +5,7 @@ VERSION = (0, 0, 0)
 __version__ = '.'.join(map(str, VERSION))
 
 register(
-    'geokey_extension_boilerplate',
+    'geokey_extension',
     'My Awesome Extension',
     display_admin=True,
     superuser=False

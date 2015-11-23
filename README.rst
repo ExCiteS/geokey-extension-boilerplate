@@ -6,8 +6,8 @@
     :alt: Coveralls Test Coverage
     :target: https://coveralls.io/r/ExCiteS/geokey-extension-boilerplate
 
-geokey-extension-boilerplate
-============================
+geokey-extension
+================
 
 This is my awesome GeoKey extension.
 
@@ -18,13 +18,13 @@ Install the extension from PyPI:
 
 .. code-block:: console
 
-    pip install geokey-extension-boilerplate
+    pip install geokey-extension
 
 Or from cloned repository:
 
 .. code-block:: console
 
-    cd geokey-extension-boilerplate
+    cd geokey-extension
     pip install -e .
 
 Add the package to installed apps:
@@ -33,14 +33,14 @@ Add the package to installed apps:
 
     INSTALLED_APPS += (
         ...
-        'geokey_extension_boilerplate',
+        'geokey_extension',
     )
 
 Migrate the models into the database:
 
 .. code-block:: console
 
-    python manage.py migrate geokey_extension_boilerplate
+    python manage.py migrate geokey_extension
 
 Copy static files:
 
@@ -57,11 +57,11 @@ Run tests:
 
 .. code-block:: console
 
-    python manage.py test geokey_extension_boilerplate
+    python manage.py test geokey_extension
 
 Check code coverage:
 
 .. code-block:: console
 
-    coverage run --source=geokey_extension_boilerplate manage.py test geokey_extension_boilerplate
+    coverage run --source=geokey_extension manage.py test geokey_extension
     coverage report -m --omit=*/tests/*,*/migrations/*

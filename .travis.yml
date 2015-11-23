@@ -30,7 +30,7 @@ before_script:
   - python travis/manage.py migrate
 
 script:
-  - coverage run --source=geokey_extension_boilerplate travis/manage.py test geokey_extension_boilerplate
+  - coverage run --source=geokey_extension travis/manage.py test geokey_extension
 
 after_success:
   - coveralls

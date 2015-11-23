@@ -18,7 +18,7 @@ DATABASES = {
 }
 
 INSTALLED_APPS += (
-    'geokey_extension_boilerplate',
+    'geokey_extension',
 )
 
 STATIC_URL = '/static/'

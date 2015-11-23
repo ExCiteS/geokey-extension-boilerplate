@@ -4,14 +4,14 @@ from os.path import join
 from setuptools import setup, find_packages
 
 
-name = 'geokey-extension-boilerplate'
+name = 'geokey-extension'
 version = __import__(name.replace('-', '_')).__version__
 repository = join('https://github.com/ExCiteS', name)
 
 setup(
     name=name,
     version=version,
-    description='Boilerplate repository for GeoKey extensions',
+    description='My awesome GeoKey extension',
     url=repository,
     download_url=join(repository, 'tarball', version),
     author='ExCiteS',
