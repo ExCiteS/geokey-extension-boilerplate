@@ -1,24 +1,31 @@
-GeoKey Extension Boilerplate
+.. image:: https://img.shields.io/travis/ExCiteS/geokey-extension-boilerplate/master.svg
+    :alt: Travis CI Build Status
+    :target: https://travis-ci.org/ExCiteS/geokey-extension-boilerplate
+
+.. image:: https://img.shields.io/coveralls/ExCiteS/geokey-extension-boilerplate/master.svg
+    :alt: Coveralls Test Coverage
+    :target: https://coveralls.io/r/ExCiteS/geokey-extension-boilerplate
+
+geokey-extension-boilerplate
 ============================
 
-This is a boilerplate if you wish to create your own extension for `GeoKey <http://github.com/excites/geokey/>`__.
+This is my awesome GeoKey extension.
 
-Customization quick start
--------------------------
+Install
+-------
 
-To start a new extension using the boilerplate, follow the instructions.
-
-`Download the extension <https://github.com/ExCiteS/geokey-extension-boilerplate/archive/master.zip>`__
-
-Rename all occurences of `geokey_extension` with the name of your Python package (e.g. my_awesome_package) and `GeoKey Extension` with a title of your extension (e.g. My Extension). The latter one will be used in user interface if applicable. Don't forget to rename the directories accordingly.
-
-Install the extension. Move to the root directory of your package and install for development.
+Install the extension from PyPI:
 
 .. code-block:: console
 
-    cd geokey-extension
-    pip install -e .
+    pip install geokey-extension-boilerplate
 
+Or from cloned repository:
+
+.. code-block:: console
+
+    cd geokey-extension-boilerplate
+    pip install -e .
 
 Add the package to installed apps:
 
@@ -26,39 +33,35 @@ Add the package to installed apps:
 
     INSTALLED_APPS += (
         ...
-        'my_awesome_package'
+        'geokey_extension_boilerplate',
     )
 
-Then, link the URLs into `urls.py`:
+Migrate the models into the database:
 
 .. code-block:: console
 
-    urlpatterns = patterns(
-        ...
-        url(r'^', include('my_awesome_package.urls', namespace='my_awesome_package')),
-    )
+    python manage.py migrate geokey_extension_boilerplate
 
-You're ready to go now.
-
-Register the extension to the backend
--------------------------------------
-
-You can add extension specific pages to GeoKey's adminstration. The link will then appear in the users dashboard under _Extensions_. Note, that GeoKey expects the landing page to your extension at the named URL pattern `my_awesome_package:index`.
-
-To register the extension, open `__init__.py` in the app root and set
+Copy static files:
 
 .. code-block:: console
 
-    display_admin=True,
+    python manage.py collectstatic
 
-You can also restrict the extension to superusers of the system to be able to access the extension specific admin pages of your extension. Just set
+You're now ready to go!
+
+Test
+----
+
+Run tests:
 
 .. code-block:: console
-   
-    superuser=True,
 
+    python manage.py test geokey_extension_boilerplate
 
-Get in touch
-------------
+Check code coverage:
 
-Get in touch with `Oliver Roick <https://github.com/oliverroick>`__ if you have questions and suggestions.
+.. code-block:: console
+
+    coverage run --source=geokey_extension_boilerplate manage.py test geokey_extension_boilerplate
+    coverage report -m --omit=*/tests/*,*/migrations/*

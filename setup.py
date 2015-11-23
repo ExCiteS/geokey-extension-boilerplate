@@ -1,29 +1,23 @@
-import os
-del os.link
+#!/usr/bin/env python
 
-from distutils.core import setup
+from os.path import join
+from setuptools import setup, find_packages
+
+
+name = 'geokey-extension-boilerplate'
+version = __import__(name.replace('-', '_')).__version__
+repository = join('https://github.com/ExCiteS', name)
 
 setup(
-    # Application name:
-    name="geokey-extension",
-
-    # Version number (initial):
-    version="0.1.0",
-
-    # Application author details:
-    author="Your name",
-    author_email="your-email@example.com",
-
-    # Packages
-    packages=["geokey_extension"],
-
-    # Include additional files into the package
+    name=name,
+    version=version,
+    description='Boilerplate repository for GeoKey extensions',
+    url=repository,
+    download_url=join(repository, 'tarball', version),
+    author='ExCiteS',
+    author_email=' excites@ucl.ac.uk',
+    license='MIT',
+    packages=find_packages(exclude=['*.tests', '*.tests.*', 'tests.*']),
     include_package_data=True,
-
-    # long_description=open("README.txt").read(),
-
-    # Dependent packages (distributions)
-    install_requires=[
-
-    ],
+    install_requires=[],
 )
