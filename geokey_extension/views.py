@@ -1,7 +1,9 @@
 from django.views.generic import TemplateView
 
+from braces.views import LoginRequiredMixin
 
-class IndexPage(TemplateView):
+
+class IndexPage(LoginRequiredMixin, TemplateView):
 
     template_name = 'ext_index.html'
 
