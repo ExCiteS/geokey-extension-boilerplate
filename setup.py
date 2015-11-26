@@ -15,7 +15,7 @@ setup(
     url=repository,
     download_url=join(repository, 'tarball', version),
     author='ExCiteS',
-    author_email=' excites@ucl.ac.uk',
+    author_email='excites@ucl.ac.uk',
     license='MIT',
     packages=find_packages(exclude=['*.tests', '*.tests.*', 'tests.*']),
     include_package_data=True,
