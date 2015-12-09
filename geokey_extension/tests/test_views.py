@@ -6,7 +6,7 @@ from django.contrib.auth.models import AnonymousUser
 from django.contrib.sites.shortcuts import get_current_site
 
 from geokey import version
-from geokey.users.tests.model_factories import UserF
+from geokey.users.tests.model_factories import UserFactory
 
 from ..views import IndexPage
 
@@ -30,7 +30,7 @@ class IndexPageTest(TestCase):
         self.assertIn('/admin/account/login/', response['location'])
 
     def test_get_with_user(self):
-        user = UserF.create()
+        user = UserFactory.create()
 
         self.request.user = user
         response = self.view(self.request).render()
