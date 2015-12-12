@@ -8,5 +8,6 @@ register(
     'geokey_extension',
     'My Awesome Extension',
     display_admin=True,
-    superuser=False
+    superuser=False,
+    version=__version__
 )
