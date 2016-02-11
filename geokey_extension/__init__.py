@@ -4,6 +4,7 @@ __version__ = '.'.join(map(str, VERSION))
 
 try:
     from geokey.extensions.base import register
+
     register(
         'geokey_extension',
         'My Awesome Extension',
