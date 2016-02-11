@@ -14,6 +14,11 @@ This is my awesome GeoKey extension.
 Install
 -------
 
+geokey-extension requires:
+
+- Python version 2.7
+- GeoKey version 0.9 or greater
+
 Install the extension from PyPI:
 
 .. code-block:: console
