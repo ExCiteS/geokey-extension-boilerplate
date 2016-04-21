@@ -1,3 +1,5 @@
+"""All URLs for the extension."""
+
 from django.conf.urls import url
 
 from views import IndexPage

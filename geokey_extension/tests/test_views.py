@@ -1,3 +1,5 @@
+"""All tests for views."""
+
 from django.http import HttpRequest
 from django.test import TestCase
 from django.template.loader import render_to_string
@@ -12,8 +14,10 @@ from ..views import IndexPage
 
 
 class IndexPageTest(TestCase):
+    """Test index page."""
 
     def setUp(self):
+        """Set up test."""
         self.request = HttpRequest()
         self.request.method = 'GET'
         self.view = IndexPage.as_view()
@@ -23,6 +27,11 @@ class IndexPageTest(TestCase):
         setattr(self.request, '_messages', messages)
 
     def test_get_with_anonymous(self):
+        """
+        Test GET with with anonymous.
+
+        It should redirect to login page.
+        """
         self.request.user = AnonymousUser()
         response = self.view(self.request)
 
@@ -30,6 +39,11 @@ class IndexPageTest(TestCase):
         self.assertIn('/admin/account/login/', response['location'])
 
     def test_get_with_user(self):
+        """
+        Test GET with with user.
+
+        It should render the page with the name of my awesome extension.
+        """
         user = UserFactory.create()
 
         self.request.user = user

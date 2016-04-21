@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 
+"""A brand new GeoKey extension."""
+
 from os.path import join
 from setuptools import setup, find_packages
 

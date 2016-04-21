@@ -17,7 +17,7 @@ Install
 geokey-extension requires:
 
 - Python version 2.7
-- GeoKey version 0.9 or greater
+- GeoKey version 1.0 or greater
 
 Install the extension from PyPI:
 
